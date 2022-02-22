@@ -70,7 +70,7 @@ int main()
                     case 4:{strcpy(p, ing[3]); break;}
                     case 5:{strcpy(p, ing[4]); break;}
                 }
-                i++
+                i++;
             }
         }
 
