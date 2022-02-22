@@ -15,6 +15,7 @@ int main()
  
     if (NULL == ptr) {
         printf("file can't be opened \n");
+        exit(1);
     }
  
     printf("content of this file are \n");
