@@ -14,7 +14,6 @@ char* ing1=malloc(sizeof(char)*15);
 char* ing2=malloc(sizeof(char)*15);
 for (char *p = strtok(s," "); p != NULL; p = strtok(NULL, " "))
 {
-    strdup(p);
     switch(i)
     {
         default:{num=atoi(p); break;}
