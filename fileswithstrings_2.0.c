@@ -22,57 +22,42 @@ int main()
         printf("file can't be opened \n");
     }
  
-    printf("content of this file are \n");
- 
-    // Printing what is written in file
-    // character by character using loop.
-    // do {
-    //     ch = fgetc(ptr);
-    //     printf("%c", ch);
- 
-    //     // Checking if character is not EOF.
-    //     // If it is EOF stop eading.
-    // } while (ch != EOF);
- 
+    int i;
+    char* s=malloc(sizeof(char)*81);
 
+    int num;
+    char* ing[5];
+    int k;
+    int counter=0;
+    for ( k=0; k<5; k++)
+    {
+        ing[k]=malloc(sizeof(char)*15);
+    }
 
-        int i;
-        char* s=malloc(sizeof(char)*81);
-
-        int num;
-        char* ing[5];
-        int k;
-        int counter=0;
-        for ( k=0; k<5; k++)
+    while (fgets(s, 81, ptr))
+    {
+        
+        i=0;
+        for (char *p = strtok(s," "); p != NULL; p = strtok(NULL, " "))
         {
-            ing[k]=malloc(sizeof(char)*15);
-        }
-
-        while (fgets(s, 81, ptr))
-        {
-            
-            i=0;
-            for (char *p = strtok(s," "); p != NULL; p = strtok(NULL, " "))
+            if(counter==0)
             {
-                if(counter==0)
-                {
-                clients=atoi(p);
-                counter++;
-                }
-                //if i mod 2 if i mod 3 to change like and dislike
-                strdup(p);
-                switch(i)
-                {
-                    default:{num=atoi(p); break;}
-                    case 1:{strcpy(p, ing[0]); break;}
-                    case 2:{strcpy(p, ing[1]); break;}
-                    case 3:{strcpy(p, ing[2]); break;}
-                    case 4:{strcpy(p, ing[3]); break;}
-                    case 5:{strcpy(p, ing[4]); break;}
-                }
-                i++;
+            clients=atoi(p);
+            counter++;
             }
+            //if i mod 2 if i mod 3 to change like and dislike
+            switch(i)
+            {
+                default:{num=atoi(p); break;}
+                case 1:{strcpy(p, ing[0]); break;}
+                case 2:{strcpy(p, ing[1]); break;}
+                case 3:{strcpy(p, ing[2]); break;}
+                case 4:{strcpy(p, ing[3]); break;}
+                case 5:{strcpy(p, ing[4]); break;}
+            }
+            i++;
         }
+    }
 
 
     printf("num: %d ing1:%s ing2:%s", num, ing[0], ing[1]);

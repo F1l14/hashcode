@@ -28,7 +28,7 @@ int main()
  
         // Checking if character is not EOF.
         // If it is EOF stop eading.
-    } while (ch != EOF);
+        }while (ch != EOF);
  
     // Closing the file
     fclose(ptr);
